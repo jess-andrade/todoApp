@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Counter from './Counter';
 
 export default TodoList = ({ list }) => {
   const completedCount = list.todos.filter(todo => todo.completed).length
@@ -12,16 +13,8 @@ export default TodoList = ({ list }) => {
       </Text>
 
       <View>
-        {/* change this latter */}
-        <View style={{ alignItems: 'center' }}>
-          <Text style={styles.count}>{completedCount}</Text>
-          <Text style={styles.subtitle}>Remaining</Text>
-        </View>
-
-        <View style={{ alignItems: 'center' }}>
-          <Text style={styles.count}>{remainingCount}</Text>
-          <Text style={styles.subtitle}>Completed</Text>
-        </View>
+        <Counter count={remainingCount} subtitle='Remaining' />
+        <Counter count={completedCount} subtitle='Completed' />
       </View>
     </View>
   )
