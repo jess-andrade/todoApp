@@ -2,8 +2,10 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'
+
 import colors from './Colors';
 import tempData from './tempData';
+import TodoList from './components/TodoList';
 
 
 export default class App extends React.Component {
@@ -33,11 +35,9 @@ export default class App extends React.Component {
             keyExtractor={item => item.name}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
-            renderItem={({ item }) =>
-              <View>
-                <Text>{item.name}</Text>
-              </View>}
+            renderItem={({ item }) => <TodoList list={item} />}
           />
+
         </View>
       </View>
     );
