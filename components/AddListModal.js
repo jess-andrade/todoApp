@@ -5,10 +5,38 @@ import colors from '../Colors'
 
 export default class AddListModal extends React.Component {
 
+  backgroundColors = ['#5cd859', '#24a6d9', '#595bd9', '#8022d9', '#d85963', '#d88559']
+
   state = {
-    name: ''
+    name: '',
+    color: this.backgroundColors[0]
   }
 
+  createTodo = () => {
+    const { name, color } = this.state
+
+    tempData.push({
+      name,
+      color,
+      todo: []
+    })
+
+    this.setState({ name: '' })
+    this.props.closeModal()
+  }
+
+  renderColors() {
+    return this.backgroundColors.map(color => {
+      return (
+        <TouchableOpacity
+          key={color}
+          style={[styles.colorSelect, { backgroundColor: color }]}
+          onPress={() => this.setState({ color })}>
+
+        </TouchableOpacity>
+      )
+    })
+  }
 
   render() {
     return (
@@ -19,9 +47,18 @@ export default class AddListModal extends React.Component {
 
         <View style={{ alignSelf: 'stretch', marginHorizontal: 32 }}>
           <Text style={styles.title}>Create Todo list </Text>
-          <TextInput style={styles.input} placeholder='List Name?' onChangeText={text => this.setState({ name: text })} />
 
-          <TouchableOpacity style={[styles.create, { backgroundColor: 'blue' }]}>
+          <TextInput
+            style={styles.input}
+            placeholder='List Name?'
+            onChangeText={text => this.setState({ name: text })} />
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 12 }}>
+            {this.renderColors()}
+          </View>
+
+          <TouchableOpacity
+            style={[styles.create, { backgroundColor: 'blue' }]}
+            onPress={this.createTodo}>
             <Text style={{ color: colors.white, fontWeight: '600' }}>create</Text>
           </TouchableOpacity>
         </View>
@@ -57,7 +94,11 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 6,
     alignItems: 'center',
-    justifyContent: 'center'
-
+    justifyContent: 'center',
+  },
+  colorSelect: {
+    width: 30,
+    height: 30,
+    borderRadius: 4,
   }
 });
