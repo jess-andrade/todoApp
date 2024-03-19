@@ -18,7 +18,7 @@ export default class AddListModal extends React.Component {
     tempData.push({
       name,
       color,
-      todo: []
+      todos: []
     })
 
     this.setState({ name: '' })
@@ -57,7 +57,7 @@ export default class AddListModal extends React.Component {
           </View>
 
           <TouchableOpacity
-            style={[styles.create, { backgroundColor: 'blue' }]}
+            style={[styles.create, { backgroundColor: this.state.color }]}
             onPress={this.createTodo}>
             <Text style={{ color: colors.white, fontWeight: '600' }}>create</Text>
           </TouchableOpacity>
