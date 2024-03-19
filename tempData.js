@@ -2,6 +2,7 @@
 
 export default tempData = [
   {
+    id: 1,
     name: 'title 01',
     color: '#24a6d9',
     todos: [
@@ -21,9 +22,30 @@ export default tempData = [
         title: 'task 04',
         completed: false
       },
+      {
+        title: 'task 05',
+        completed: false
+      },
+      {
+        title: 'task 06',
+        completed: false
+      },
+      {
+        title: 'task 07',
+        completed: false
+      },
+      {
+        title: 'task 08',
+        completed: false
+      },
+      {
+        title: 'task 09',
+        completed: false
+      },
     ]
   },
   {
+    id: 2,
     name: 'title 02',
     color: 'pink',
     todos: [
