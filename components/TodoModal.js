@@ -6,12 +6,11 @@ export default class TodoModal extends React.Component {
   state = {
     name: this.props.list.name,
     color: this.props.list.color,
-    todos: this.list.todos,
+    todos: this.props.list.todos,
   }
 
   render() {
 
-    console.log(todos)
     return (
       < SafeAreaView style={styles.container} >
         <TouchableOpacity
