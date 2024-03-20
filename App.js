@@ -25,7 +25,7 @@ export default class App extends React.Component {
   }
 
   addList = list => {
-    this.setState({ lists: [...this.state.lists, { ...list, id: this.state.lists.length + 1, todos: [] }] })
+    this.setState({ lists: [{ ...list, id: this.state.lists.length + 1, todos: [] }, ...this.state.lists] })
   }
 
   updateList = list => {
