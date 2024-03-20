@@ -5,7 +5,7 @@ import colors from '../Colors'
 
 export default class AddListModal extends React.Component {
 
-  backgroundColors = ['#5cd859', '#24a6d9', '#595bd9', '#8022d9', '#d85963', '#d88559']
+  backgroundColors = ['#4cb4f0', '#b0daec', '#d1ebf6', '#fefbba', '#f6d4e3', '#f98ea9', '#f52e6f', '#e1a6da', '#a3629f']
 
   state = {
     name: '',
@@ -50,7 +50,7 @@ export default class AddListModal extends React.Component {
             style={styles.input}
             placeholder='List Name?'
             onChangeText={text => this.setState({ name: text })} />
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 12 }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 12, flexWrap: 'wrap', maxWidth: 350 }}>
             {this.renderColors()}
           </View>
 

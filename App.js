@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    gap: 50,
   },
   divider: {
     backgroundColor: colors.lightBlue,
