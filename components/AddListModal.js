@@ -5,7 +5,7 @@ import colors from '../Colors'
 
 export default class AddListModal extends React.Component {
 
-  backgroundColors = ['#4cb4f0', '#b0daec', '#d1ebf6', '#fefbba', '#f6d4e3', '#f98ea9', '#f52e6f', '#e1a6da', '#a3629f']
+  backgroundColors = ['#4cb4f0', '#b0daec', '#78d237', '#ffd246', '#f8a227', '#f66320', '#dc3a38', '#ee6579', '#a364d9']
 
   state = {
     name: '',
@@ -44,7 +44,7 @@ export default class AddListModal extends React.Component {
         </TouchableOpacity>
 
         <View style={{ alignSelf: 'stretch', marginHorizontal: 32 }}>
-          <Text style={styles.title}>Create Todo list </Text>
+          <Text style={styles.title}>Create a new list </Text>
 
           <TextInput
             style={styles.input}
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: colors.blue,
+    borderColor: colors.gray,
     borderRadius: 6,
     height: 50,
     marginTop: 8,

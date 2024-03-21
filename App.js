@@ -53,14 +53,14 @@ export default class App extends React.Component {
         <View style={{ flexDirection: 'row' }} >
           <View style={styles.divider} />
           <Text style={styles.title}>
-            Todo <Text style={{ fontWeight: '300', color: colors.blue }}>Lists</Text>
+            My <Text style={{ fontWeight: '300', color: colors.gray }}>Lists</Text>
           </Text>
           <View style={styles.divider} />
         </View>
 
         <View styles={{ marginVertical: 48 }}>
           <TouchableOpacity style={styles.addList} onPress={() => this.toggleAddTodoModal()}>
-            <AntDesign name='plus' size={16} color={colors.blue} />
+            <AntDesign name='plus' size={16} color={colors.black} />
           </TouchableOpacity>
 
           <Text style={styles.add}>Add List</Text>
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     gap: 50,
   },
   divider: {
-    backgroundColor: colors.lightBlue,
+    backgroundColor: colors.lightGray,
     height: 1,
     flex: 1,
     alignSelf: 'center',
@@ -104,14 +104,14 @@ const styles = StyleSheet.create({
   },
   addList: {
     borderWidth: 2,
-    borderColor: colors.lightBlue,
+    borderColor: colors.lightGray,
     borderRadius: 4,
     padding: 16,
     alignItems: 'center',
     justifyContent: 'center'
   },
   add: {
-    color: colors.blue,
+    color: colors.gray,
     fontWeight: '600',
     fontSize: 14,
     marginTop: 8,
