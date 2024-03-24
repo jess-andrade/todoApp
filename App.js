@@ -7,24 +7,35 @@ import colors from './Colors';
 import tempData from './tempData';
 import TodoList from './components/TodoList';
 import AddListModal from './components/AddListModal';
+import Fire from './Fire';
 
 
 export default class App extends React.Component {
 
   state = {
     addTodoVisible: false,
-    lists: tempData,
-    user: {}
+    lists: [],
+    user: {},
+    loading: true
   };
 
-  // componentDidMount() {
-  //   firebase = new Fire((error, user) => {
-  //     if (error) {
-  //       return alert('oh, something went wrong')
-  //     }
-  //     this.setState({ user })
-  //   })
-  // }
+  //maybe i should delete this
+  componentDidMount() {
+
+    firebase = new Fire((error, user) => {
+      if (error) {
+        return alert('oh, something went wrong')
+      }
+
+      firebase.getLists(lists => {
+        this.setState({ lists, user }, () => {
+          this.setState({ loadind: false })
+        })
+      })
+
+      this.setState({ user })
+    })
+  }
 
   toggleAddTodoModal() {
     this.setState({ addTodoVisible: !this.state.addTodoVisible });
@@ -59,9 +70,9 @@ export default class App extends React.Component {
           <AddListModal closeModal={() => this.toggleAddTodoModal()} addList={this.addList} />
 
         </Modal>
-        {/* <View>
+        <View>
           <Text>User: {this.state.user.uid}</Text>
-        </View> */}
+        </View>
 
         <View style={{ flexDirection: 'row' }} >
           <View style={styles.divider} />
